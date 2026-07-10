@@ -1,0 +1,42 @@
+[
+  {
+    "creator": "Replace with verified creator A",
+    "platform": "YouTube / Bilibili / Xiaohongshu",
+    "source_url": "https://replace-with-direct-source.example/video",
+    "frame_url": "https://replace-with-real-aroll-frame.example/frame.jpg",
+    "lane": "AI / technology",
+    "match_score": 85,
+    "why_match": ["Similar camera-to-subject distance", "Transferable small-room depth"],
+    "borrow": ["Soft side key", "Warm background practical"],
+    "do_not_borrow": ["Furniture that cannot fit this room"],
+    "lighting_read": "Soft side key; warm practical; subtle subject separation",
+    "verified_aroll": true
+  },
+  {
+    "creator": "Replace with verified creator B",
+    "platform": "YouTube / Bilibili / Xiaohongshu",
+    "source_url": "https://replace-with-direct-source.example/video",
+    "frame_url": "https://replace-with-real-aroll-frame.example/frame.jpg",
+    "lane": "product design / technology",
+    "match_score": 82,
+    "why_match": ["Useful negative space", "One readable midground anchor"],
+    "borrow": ["Low object density", "Neutral face light"],
+    "do_not_borrow": ["Large studio construction"],
+    "lighting_read": "Neutral soft key; sparse warm accent; clean background",
+    "verified_aroll": true
+  },
+  {
+    "creator": "Replace with verified creator C",
+    "platform": "YouTube / Bilibili / Xiaohongshu",
+    "source_url": "https://replace-with-direct-source.example/video",
+    "frame_url": "https://replace-with-real-aroll-frame.example/frame.jpg",
+    "lane": "professional technology",
+    "match_score": 80,
+    "why_match": ["Controlled contrast", "Achievable black-shirt separation"],
+    "borrow": ["Negative fill", "Restrained rim"],
+    "do_not_borrow": ["Gaming RGB"],
+    "lighting_read": "Shaped key; deeper shadow side; restrained warm/cool separation",
+    "verified_aroll": true
+  }
+]
+
