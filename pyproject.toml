@@ -3,9 +3,9 @@ requires = ["hatchling>=1.26"]
 build-backend = "hatchling.build"
 
 [project]
-name = "creator-scene-director"
-version = "0.1.0"
-description = "Turn one real room photo into three achievable A-roll lighting and set directions, then an executable setup plan."
+name = "josh-creator-scene-skill"
+version = "0.2.0"
+description = "The engine behind Josh Creator Scene Skill: one real room photo to three filmable A-roll scenes and an executable setup plan."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -26,11 +26,12 @@ openai = ["openai>=2.0.0"]
 dev = ["pytest>=8.0", "ruff>=0.9"]
 
 [project.scripts]
+josh-creator-scene = "creator_scene_director.cli:main"
 creator-scene-director = "creator_scene_director.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/joshzhao-ai/creator-scene-director-sdk"
-Repository = "https://github.com/joshzhao-ai/creator-scene-director-sdk"
+Homepage = "https://github.com/joshzhao-ai/Josh-creator-scene-skill"
+Repository = "https://github.com/joshzhao-ai/Josh-creator-scene-skill"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/creator_scene_director"]
@@ -42,4 +43,3 @@ addopts = "-q"
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-

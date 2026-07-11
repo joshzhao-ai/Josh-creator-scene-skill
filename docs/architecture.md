@@ -1,4 +1,4 @@
-# Architecture
+# Josh Creator Scene Skill architecture
 
 ```text
 room photo/video
@@ -27,4 +27,3 @@ Web research and image generation change quickly. The state machine and quality 
 3. Exactly three different verified creators seed three different directions.
 4. Every light position pairs frame-side and subject-side coordinates.
 5. A generated image is a concept preview, followed by a physical execution plan.
-

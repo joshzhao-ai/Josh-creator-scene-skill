@@ -15,7 +15,7 @@ def _load_references(path: str | Path) -> list[CreatorReference]:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="creator-scene-director")
+    parser = argparse.ArgumentParser(prog="josh-creator-scene")
     sub = parser.add_subparsers(dest="command", required=True)
 
     init = sub.add_parser("init", help="Create a scene project from one real room image")

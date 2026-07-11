@@ -1,0 +1,7 @@
+interface:
+  display_name: "Josh 创作者场景 Skill"
+  short_description: "一张真实房间图，生成三套可拍、可选、可落地的口播场景"
+  icon_small: "./assets/icon-small.png"
+  icon_large: "./assets/icon-large.png"
+  brand_color: "#F59E0B"
+  default_prompt: "Use $josh-creator-scene-skill to analyze my real room photo, generate three achievable A-roll scene previews, let me choose one, then deliver the exact camera, lighting and set plan."

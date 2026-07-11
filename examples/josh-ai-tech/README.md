@@ -1,6 +1,6 @@
 # Josh AI / Tech creator demo
 
-This is a real small-room test case used to shape the SDK guardrails.
+This is a real small-room test case used to shape the Skill guardrails.
 
 - Source: straight desk, fixed camera view, curtain and wall planes preserved.
 - User correction encoded in the SDK: the key is on `画面右（人物左）`.
@@ -8,4 +8,3 @@ This is a real small-room test case used to shape the SDK guardrails.
 - Rejected: active display, invented side table, changed desk angle, fake architecture.
 
 The images in this folder are concept previews. They communicate a direction; they do not prove exact furniture fit or light output.
-

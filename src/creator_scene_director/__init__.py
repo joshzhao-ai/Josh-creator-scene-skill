@@ -1,4 +1,4 @@
-"""Creator Scene Director public SDK."""
+"""Optional programmable engine for Josh Creator Scene Skill."""
 
 from .models import (
     ApprovalLedger,
@@ -18,5 +18,4 @@ __all__ = [
     "Stage",
 ]
 
-__version__ = "0.1.0"
-
+__version__ = "0.2.0"

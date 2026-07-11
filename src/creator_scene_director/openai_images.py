@@ -7,7 +7,7 @@ from .models import Direction, Project
 
 
 class OpenAIImageGenerator:
-    """GPT Image adapter. The core SDK remains usable without this optional dependency."""
+    """GPT Image adapter. The workflow engine remains usable without this dependency."""
 
     def __init__(
         self,
