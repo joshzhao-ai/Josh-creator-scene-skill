@@ -84,7 +84,7 @@ Josh Creator Scene Skill 把这些真实踩坑写成了硬规则：
 ### Codex
 
 ```bash
-git clone --branch v0.2.1 --depth 1 \
+git clone --branch v0.2.2 --depth 1 \
   https://github.com/joshzhao-ai/Josh-creator-scene-skill.git \
   ~/.codex/skills/josh-creator-scene-skill
 ```
@@ -104,7 +104,7 @@ $josh-creator-scene-skill
 ### Claude Code / 其他 Agent
 
 ```bash
-git clone --branch v0.2.1 --depth 1 \
+git clone --branch v0.2.2 --depth 1 \
   https://github.com/joshzhao-ai/Josh-creator-scene-skill.git \
   ~/.claude/skills/josh-creator-scene-skill
 ```
@@ -125,7 +125,7 @@ git clone --branch v0.2.1 --depth 1 \
 ```bash
 # 更新到最新版本
 git -C ~/.codex/skills/josh-creator-scene-skill fetch --tags
-git -C ~/.codex/skills/josh-creator-scene-skill checkout v0.2.1
+git -C ~/.codex/skills/josh-creator-scene-skill checkout v0.2.2
 
 # 卸载
 rm -rf ~/.codex/skills/josh-creator-scene-skill
@@ -188,4 +188,4 @@ josh-creator-scene --help
 
 > 代码与 Skill 工作流采用 MIT License。`examples/` 与 `assets/` 中包含 Josh 人像的演示素材仅用于项目说明，不授予独立转载、训练或商业复用许可。
 
-<p align="center"><sub>v0.2.1 Public Beta · 2026-07 · 从 Josh 的真实 AI 科技口播房间里长出来 · Made by Josh × Codex</sub></p>
+<p align="center"><sub>v0.2.2 Public Beta · 2026-07 · 从 Josh 的真实 AI 科技口播房间里长出来 · Made by Josh × Codex</sub></p>
