@@ -7,7 +7,6 @@ This is a real small-room test case used to shape the Skill guardrails.
 - Approved direction: warm practical, dark neutral clothing, restrained creator tools.
 - Rejected: active display, invented side table, changed desk angle, fake architecture.
 
-The images in this folder are concept previews. They communicate a direction; they do not prove exact furniture fit or light output.
+The scene images in this folder are concept previews. They communicate a direction; they do not prove exact furniture fit or light output.
 
-After a direction is selected, `deliverable-camera-annotation.jpg` and
-`deliverable-lighting-plan.png` show how that direction becomes a camera and lighting plan.
+`deliverable-camera-annotation.jpg` and `deliverable-lighting-plan.png` are retained only as historical drafts. Their spatial annotations were rejected during review and they must not be treated as the current setup plan.

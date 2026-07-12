@@ -1,12 +1,12 @@
 ---
 name: josh-creator-scene-skill
 description: >-
-  Use when a creator says their talking-head background looks bad, asks how to light or stage a real bedroom/home office, wants three achievable A-roll scene previews from one room photo, or needs exact camera, lighting, set and shopping instructions for YouTube, Bilibili, Xiaohongshu, courses, livestreams, AI/tech content or a personal brand. The skill researches verified creator references, edits the user's actual room into three distinct options, preserves real geometry and user corrections, then turns the selected option into a setup they can reproduce.
+  Use when a creator says their talking-head background looks bad, asks how to light or stage a real bedroom/home office, wants an achievable scene preview from one room photo, or needs exact camera, lighting, set and shopping instructions for YouTube, Bilibili, Xiaohongshu, courses, livestreams, AI/tech content or a personal brand. The skill researches verified creator references, edits the user's actual room into a recommended primary direction with alternatives when useful, preserves real geometry and user corrections, then turns the confirmed direction into a setup they can reproduce.
 ---
 
 # Josh Creator Scene Skill
 
-Build three scenes that are credible in the user's actual room, not generic pretty renders. The product promise is: **upload one real room image, see three achievable ideal A-roll outcomes, choose one, then receive exact setup instructions.** The user should not need to understand prompts, CLI, SDKs, lighting theory or set-design terminology.
+Build a primary scene that is credible in the user's actual room, not a generic pretty render. The product promise is: **upload one real room image, see the recommended talking-head result in that space, then receive exact setup instructions.** Keep two distinct alternatives available when comparison would materially help, but do not make the number of versions the headline. The user should not need to understand prompts, CLI, SDKs, lighting theory or set-design terminology.
 
 ## Core rules
 
@@ -57,9 +57,9 @@ Choose three different creators. Optimize for physical applicability rather than
 
 Use the references as design evidence. Unless the user explicitly asks to stop at raw references, do **not** make them choose yet; users cannot reliably judge a reference until they see it translated into their own room.
 
-## 2. Convert references into three room-specific directions
+## 2. Convert references into a primary direction and alternatives
 
-Read [set-design.md](references/set-design.md). Create three distinct but equally credible directions. Each may map to one reference or combine a reference's lighting grammar with approved elements from a prior user-liked render. Translate each direction through these layers:
+Read [set-design.md](references/set-design.md). Create one recommended primary direction plus two distinct, credible alternatives. Each may map to one reference or combine a reference's lighting grammar with approved elements from a prior user-liked render. Translate each direction through these layers:
 
 1. **Composition:** final crop, camera height, subject offset, visible depth path, and negative space.
 2. **Set:** retain/use/remove/add; use only objects that fit real planes and do not create a fake floating desk or display.
@@ -79,11 +79,11 @@ Do not label one as the cheap or inferior version. All three should be desirable
 
 Use the `imagegen` skill and its built-in image tool to edit the supplied scene image. Read [mockup-prompting.md](references/mockup-prompting.md) before prompting.
 
-Generate **three visual mockups** using separate image-generation calls. Preserve the source room’s actual geometry and the person's identity in every version. Use references for mood and visual grammar, not literal copying. If the user supplies a previously approved render, include it as an `approved visual reference` with higher priority than the creator inspiration.
+Generate the **recommended primary mockup** first, then generate two alternatives using separate image-generation calls when the user asked to compare or when the direction is genuinely uncertain. Preserve the source room’s actual geometry and the person's identity in every version. Use references for mood and visual grammar, not literal copying. If the user supplies a previously approved render, include it as an `approved visual reference` with higher priority than the creator inspiration.
 
-Inspect all three results against the source and approval ledger. Regenerate a version once if it changes room structure/camera orientation, loses the approved midground, reintroduces a rejected element, or is not meaningfully different from the other versions. Present A/B/C together with a short legend distinguishing existing items, movable additions, and lighting-only changes.
+Inspect every generated result against the source and approval ledger. Regenerate a version once if it changes room structure/camera orientation, loses the approved midground, reintroduces a rejected element, or adds objects that cannot fit. Present the primary result prominently. Keep alternatives secondary and explain only the meaningful visual decision that differs.
 
-Only after the user sees their own room in all three versions, ask them to choose `A`, `B`, or `C`.
+Ask the user to confirm the primary direction. If they reject it or request comparison, show the alternatives and let them choose.
 
 ## 4. Deliver the executable setup
 
@@ -100,4 +100,4 @@ Use relative brightness first (`face`, `background`, `practical`) rather than fa
 
 ## Finish condition
 
-The task is complete only when the user has: three verified references, three room-specific visual mockups, one selected direction, and specific instructions they can set up alone. Offer a final calibration pass from one test frame after they build it.
+The task is complete only when the user has: verified reference evidence, one confirmed room-specific visual direction, and specific instructions they can set up alone. Offer alternatives when useful, and offer a final calibration pass from one test frame after they build it.

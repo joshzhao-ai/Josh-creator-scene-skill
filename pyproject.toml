@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "josh-creator-scene-skill"
 version = "0.2.1"
-description = "The engine behind Josh Creator Scene Skill: one real room photo to three filmable A-roll scenes and an executable setup plan."
+description = "One real room photo to a talking-head scene preview and an executable camera, lighting and set plan."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
