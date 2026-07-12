@@ -23,7 +23,7 @@ class OpenAIImageGenerator:
                 from openai import OpenAI
             except ImportError as exc:  # pragma: no cover - depends on optional package
                 raise RuntimeError(
-                    "Install the OpenAI adapter with: pip install 'creator-scene-director[openai]'"
+                    "Install the OpenAI adapter with: pip install 'josh-creator-scene-skill[openai]'"
                 ) from exc
             client = OpenAI()
         self.client = client

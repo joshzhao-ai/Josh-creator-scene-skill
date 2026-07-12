@@ -4,13 +4,14 @@
 
 <h1 align="center">🎬 Josh Creator Scene Skill</h1>
 
-<p align="center"><b>拍一张你的房间，AI 帮你把它变成三套真正能拍的口播场景。</b><br>
+<p align="center"><b>拍一张你的房间，AI 帮你预演三套以真实落地为目标的口播场景。</b><br>
 <sub>找参考 · 看空间 · 出三版 · 选方向 · 给灯位 —— 你不需要懂布光，也不需要会写提示词。</sub></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Input-1%20张真实房间图-2563eb" alt="input">
   <img src="https://img.shields.io/badge/Output-3%20版效果图%20%2B%201%20套落地方案-f59e0b" alt="output">
-  <img src="https://img.shields.io/badge/Platform-Codex%20%7C%20Claude%20Code-7c3aed" alt="platform">
+  <img src="https://img.shields.io/badge/Tested-Codex-7c3aed" alt="tested on Codex">
+  <a href="https://github.com/joshzhao-ai/Josh-creator-scene-skill/actions/workflows/ci.yml"><img src="https://github.com/joshzhao-ai/Josh-creator-scene-skill/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/Verified-Josh%20真实房间反复校准-16a34a" alt="verified">
 </p>
 
@@ -33,6 +34,8 @@
 | <img src="examples/josh-ai-tech/A-warm-creator-studio.png" width="300"> | <img src="examples/josh-ai-tech/B-minimal-product-designer.png" width="300"> | <img src="examples/josh-ai-tech/C-dark-professional-tech.png" width="300"> |
 | 暖灯、植物、书和创作者工具 | 更干净的留白与产品感 | 更深的对比与人物分离 |
 
+> 以上为基于真实房间生成的 AI 概念预演，用来选择方向，不是已经完成的实体改造图。
+
 这三张不是三个陌生房间。人物、机位、桌子方向、窗帘、墙面和真实纵深都来自同一张输入图。
 
 你选中一版后，Skill 还会继续给出：
@@ -41,7 +44,15 @@
 - 主光、负补光、背景灯分别放在哪里；
 - 哪些现有物品保留、移走或补充；
 - 缺什么再买什么，而不是先列一张昂贵购物单；
-- 一套 10 分钟就能照着摆的执行顺序。
+- 一套用来完成第一轮灯光校准的 10 分钟执行顺序。
+
+### 选中一版后，交付不止是一张图
+
+| 真实画面标注 | 俯视灯位与空间关系 |
+|:---:|:---:|
+| <img src="examples/josh-ai-tech/deliverable-camera-annotation.jpg" width="430"> | <img src="examples/josh-ai-tech/deliverable-lighting-plan.png" width="430"> |
+
+这一步把视觉方向翻译成相机、主光、背景灯、构图和空间纵深。具体尺寸和亮度仍需用一张测试画面继续校准。
 
 ---
 
@@ -69,7 +80,7 @@ Josh Creator Scene Skill 把这些真实踩坑写成了硬规则：
 1. **真实房间是几何基准**：不随意改墙、窗、门、桌子和机位。
 2. **永远使用双坐标**：例如 `画面右（人物左）`，避免把灯位说反。
 3. **先看三版再选择**：不会只给一张“碰运气”的效果图。
-4. **保留你的反馈**：喜欢、拒绝和纠正都会进入 approval ledger，后续版本必须继承。
+4. **保留你的反馈**：喜欢、拒绝和纠正都会进入偏好清单，后续版本必须继承。
 5. **效果图之后还有交付**：视觉预览不是终点，能在房间里复刻才算完成。
 
 ---
@@ -79,7 +90,8 @@ Josh Creator Scene Skill 把这些真实踩坑写成了硬规则：
 ### Codex
 
 ```bash
-git clone https://github.com/joshzhao-ai/Josh-creator-scene-skill.git \
+git clone --branch v0.2.1 --depth 1 \
+  https://github.com/joshzhao-ai/Josh-creator-scene-skill.git \
   ~/.codex/skills/josh-creator-scene-skill
 ```
 
@@ -95,16 +107,37 @@ $josh-creator-scene-skill
 我选定后，再给我具体的相机、打光和布景方案。
 ```
 
-### Claude Code
+### Claude Code / 其他 Agent
 
 ```bash
-git clone https://github.com/joshzhao-ai/Josh-creator-scene-skill.git \
+git clone --branch v0.2.1 --depth 1 \
+  https://github.com/joshzhao-ai/Josh-creator-scene-skill.git \
   ~/.claude/skills/josh-creator-scene-skill
 ```
 
-新会话上传房间图并说“帮我设计三版口播场景”即可触发。
+在具备联网搜索、多模态读图和参考图编辑能力的环境中，新会话上传房间图并说“帮我设计三版口播场景”即可触发。
 
-> 需要支持：联网查找真实案例、多模态读图，以及图片编辑/生成能力。缺少某项能力时，Skill 会明确停在对应阶段，不会伪造案例或效果图。
+| 能力 | 用途 | 缺少时 |
+|---|---|---|
+| 多模态读图 | 分析真实空间 | 无法启动空间判断 |
+| 联网搜索 | 核验真实 A-roll 案例 | 停在空间分析，不伪造来源 |
+| 参考图编辑/生图 | 生成 A/B/C 预演 | 只交付文字方向和提示词 |
+
+> 图片会发送给你当前配置的生图服务；请先隐藏不希望上传的私人信息。生成成本取决于你使用的模型与 Provider。
+
+<details>
+<summary><b>更新与卸载</b></summary>
+
+```bash
+# 更新到最新版本
+git -C ~/.codex/skills/josh-creator-scene-skill fetch --tags
+git -C ~/.codex/skills/josh-creator-scene-skill checkout v0.2.1
+
+# 卸载
+rm -rf ~/.codex/skills/josh-creator-scene-skill
+```
+
+</details>
 
 ---
 
@@ -117,7 +150,7 @@ flowchart LR
     C --> D[🎨 在你的房间生成 A/B/C 三版]
     D --> E{你选择哪一版?}
     E --> F[📐 相机 + 灯位 + 布景图]
-    F --> G[✅ 10 分钟搭建与试拍校准]
+    F --> G[✅ 10 分钟完成第一轮校准]
 ```
 
 Skill 的核心不是某一句提示词，而是把完整经验封装起来：真实案例筛选、空间判断、审美方向、图像生成约束、左右坐标、用户反馈继承、结果验收和最终执行。
@@ -159,4 +192,6 @@ josh-creator-scene --help
 
 ---
 
-<p align="center"><sub>v0.2 · 2026-07 · 从 Josh 的真实 AI 科技口播房间里长出来 · Made by Josh × Codex</sub></p>
+> 代码与 Skill 工作流采用 MIT License。`examples/` 与 `assets/` 中包含 Josh 人像的演示素材仅用于项目说明，不授予独立转载、训练或商业复用许可。
+
+<p align="center"><sub>v0.2.1 Public Beta · 2026-07 · 从 Josh 的真实 AI 科技口播房间里长出来 · Made by Josh × Codex</sub></p>
