@@ -1,33 +1,27 @@
-<p align="center">
-  <img src="assets/banner.png" alt="Josh Creator Scene Skill" width="100%">
-</p>
-
 <h1 align="center">🎬 Josh Creator Scene Skill</h1>
 
-<p align="center"><b>拍一张你的房间，AI 帮你预演三套以真实落地为目标的口播场景。</b><br>
-<sub>找参考 · 看空间 · 出三版 · 选方向 · 给灯位 —— 你不需要懂布光，也不需要会写提示词。</sub></p>
+<p align="center"><b>上传一张真实房间图，先看三套口播效果，再拿到相机、灯位和布景方案。</b><br>
+<sub>你不需要懂布光，也不需要会写提示词。</sub></p>
+
+| 输入前 · 普通房间 | 输入后 · 选中的 A 版 |
+|:---:|:---:|
+| <img src="examples/josh-ai-tech/input-room.jpg" width="480" alt="原始房间"> | <img src="examples/josh-ai-tech/A-warm-creator-studio.png" width="480" alt="A 版温暖创作者工作室"> |
+| 真实空间、固定机位、没有专门装修 | 同一个空间，加入可移动布景并重新设计光线 |
+
+<p align="center"><b>1 张房间图 → 3 套视觉预演 → 1 份可执行方案</b></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Input-1%20张真实房间图-2563eb" alt="input">
   <img src="https://img.shields.io/badge/Output-3%20版效果图%20%2B%201%20套落地方案-f59e0b" alt="output">
   <img src="https://img.shields.io/badge/Tested-Codex-7c3aed" alt="tested on Codex">
-  <a href="https://github.com/joshzhao-ai/Josh-creator-scene-skill/actions/workflows/ci.yml"><img src="https://github.com/joshzhao-ai/Josh-creator-scene-skill/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/Verified-Josh%20真实房间反复校准-16a34a" alt="verified">
 </p>
 
-> 你还在为口播背景发愁吗？以前要刷几十个博主、猜灯放哪里、买一堆不一定有用的东西。现在只要上传一张房间照片，Agent 会先替你找适配案例，再在**你的真实空间**里生成三版效果，最后告诉你相机、灯和布景具体放在哪里。
+> 这不是换房装修。Skill 会先读懂你的真实空间，再把适配的 A-roll 方法翻译进这个房间，最后告诉你相机、灯和布景具体放在哪里。
 
 ---
 
-## 先看结果：一张普通房间图，可以变成什么？
-
-### 输入：你现在真实拍出来的样子
-
-<p align="center">
-  <img src="examples/josh-ai-tech/input-room.jpg" alt="原始房间" width="760">
-</p>
-
-### 输出：同一个房间，三种真正能拍的方向
+## 同一个房间，先给你三种方向
 
 | A · 温暖创作者工作室 | B · 极简产品设计师 | C · 深色专业科技感 |
 |:---:|:---:|:---:|
@@ -36,7 +30,7 @@
 
 > 以上为基于真实房间生成的 AI 概念预演，用来选择方向，不是已经完成的实体改造图。
 
-这三张不是三个陌生房间。人物、机位、桌子方向、窗帘、墙面和真实纵深都来自同一张输入图。
+它们不是三个陌生房间，也不只是换色。人物、机位、桌子方向、窗帘、墙面和真实纵深都来自同一张输入图；三版对应三种不同的内容气质。
 
 你选中一版后，Skill 还会继续给出：
 
